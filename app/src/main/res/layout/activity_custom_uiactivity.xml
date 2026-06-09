@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:fitsSystemWindows="true"
+    tools:context=".CustomUIActivity">
+
+
+    <TextureView
+        android:id="@+id/remoteView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_rounded"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/ivRemoteMic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/round_mic_24" />
+
+        <ImageView
+            android:id="@+id/ivRemoteCam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/round_videocam_24" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/cs_scrim_bottom"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_local_preview"
+            android:layout_width="@dimen/cs_local_preview_w"
+            android:layout_height="@dimen/cs_local_preview_h"
+            android:layout_gravity="right"
+            android:layout_marginEnd="@dimen/cs_spacing_md"
+            android:layout_marginBottom="@dimen/cs_local_preview_bottom_margin"
+            android:elevation="@dimen/cs_preview_elevation"
+            app:cardBackgroundColor="@color/cs_preview_bg"
+            app:cardCornerRadius="@dimen/cs_preview_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:strokeColor="@color/cs_preview_border"
+            app:strokeWidth="@dimen/cs_preview_border_width">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextureView
+                    android:id="@+id/localView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_rounded"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMic"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="5dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:backgroundTint="#74000000"
+                app:cornerRadius="28dp"
+                app:icon="@drawable/round_mic_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="30dp"
+                app:iconTint="@color/cs_text_primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCamera"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="5dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:backgroundTint="#74000000"
+                app:cornerRadius="28dp"
+                app:icon="@drawable/round_videocam_off_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="30dp"
+                app:iconTint="@color/cs_text_primary" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMessage"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    app:backgroundTint="#74000000"
+                    app:cornerRadius="28dp"
+                    app:icon="@drawable/round_message_24"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconSize="30dp"
+                    app:iconTint="@color/cs_text_primary" />
+
+
+
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCameraFlip"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="5dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:backgroundTint="#74000000"
+                app:cornerRadius="28dp"
+                app:icon="@drawable/round_flip_camera_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="30dp"
+                app:iconTint="@color/cs_text_primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/endCall"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="5dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:backgroundTint="#74ED0000"
+                app:cornerRadius="28dp"
+                app:icon="@drawable/round_call_end_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="30dp"
+                app:iconTint="@color/cs_text_primary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
