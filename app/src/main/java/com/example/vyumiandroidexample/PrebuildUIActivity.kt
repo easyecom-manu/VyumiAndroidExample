@@ -9,6 +9,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.app.PictureInPictureParams
+import android.content.res.Configuration
+import android.os.Build
+import android.util.Rational
 
 class PrebuildUIActivity : AppCompatActivity() {
     var liveCallView: VyumiLiveCallView? = null
@@ -38,6 +42,19 @@ class PrebuildUIActivity : AppCompatActivity() {
         })
 
 
+    }
+
+    override fun onUserLeaveHint() {
+        super.onUserLeaveHint()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            val params = PictureInPictureParams.Builder()
+                .setAspectRatio(Rational(9, 16))
+                .build()
+
+            enterPictureInPictureMode(params)
+        }
     }
 
     override fun onDestroy() {

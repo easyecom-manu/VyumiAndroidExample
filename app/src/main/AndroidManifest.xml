@@ -34,7 +34,10 @@
             android:exported="false" />
         <activity
             android:name=".PrebuildUIActivity"
-            android:exported="false" />
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
